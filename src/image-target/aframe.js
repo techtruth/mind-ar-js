@@ -293,7 +293,7 @@ AFRAME.registerComponent('mindar-image-target', {
     }
     var m = new AFRAME.THREE.Matrix4();
     m.elements = worldMatrix;
-    m.multiply(this.postMatrix);
+    m.multiply(this.postMatrix || new AFRAME.THREE.Matrix4());
     this.el.object3D.matrix = m;
   }
 });
